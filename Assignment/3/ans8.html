@@ -9,17 +9,18 @@
     
     <form method=" ">
     <h1>REGISTRATION FORM</h1>
-    Name:<input Type="text"name="name"placeholder='Enter your name'/>
+    Name:<input Type="text"name="name"placeholder='Enter your name'required="required"/>
          <br> <br/>
-    Email:<input Type="text"name="Email"placeholder='abcz123@gmail.com'/>
+    Email:<input Type="text"name="Email"placeholder='abcz123@gmail.com'required="required"/>
         <br> <br/>
-    Password:<input Type="password"name='password'placeholder='Enter your password'/>
+    Password:<input Type="password"name='password'max-length="20"placeholder='Enter your password'required="required"/>
         <br> <br/>
-    Confirm password:<input Type="password"name='password'placeholder='Re-enter your password'/>
+    Confirm password:<input Type="password"name='password'max-length="20"placeholder='Re-enter your password'required="required"/>
         <br> <br/>
-    Select your birth-date:<input Type="date"name="date"/>
+    Select your birth-date:<input Type="date"name="date"min="2006/09/02"required="required"/>
         <br> <br/>
     Select your Gender:<select>
+        <option value="select">Select Your Gender</option>
         <option value="male">Male</option>
         <option value="Female">Female</option>
         <option value="Other">Others</option>
@@ -34,7 +35,7 @@
     <input Type="checkbox"value='Coding'name='Hobbies'>Coding</input>
     <input Type="checkbox"value='Sports'name='Hobbies'>Sports</input>
         <br> <br/>
-    Upload profile picture:<input Type="file"/>
+    Upload profile picture:<input Type="file"accept="png, jpeg" required="required"/>
         <br> <br/>
     <button value="submit">Submit</button>
    </form> 
