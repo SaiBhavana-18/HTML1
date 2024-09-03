@@ -8,9 +8,9 @@
 <body>
     <form method="">
         <h1>PRODUCT ORDER</h1>
-        Name:<input Type="text"name="name"placeholder="Enter your name"required="required"/>
+        Name:<input Type="text"name="name"placeholder="Enter your name"required="required"autocomplete="off"/>
         <br> <br/>
-        Email:<input Type="text"name="email"placeholder="abcx123@gmail.com"required="required"/>
+        Email:<input Type="text"name="email"placeholder="abcx123@gmail.com"required="required"autocomplete="off"/>
           <br> <br/>
         Select Product:<select id="Select">
             <option value="">Select Product </option>
@@ -22,7 +22,7 @@
           <br> <br/>
         Quantity of the product:<input Type="number"id="number"/>
           <br> <br/>
-        Preferred Delivery Date and Time:<input Type=""min="getDate()"id="datetime" />
+        Preferred Delivery Date and Time:<input Type="date" id="date" onfocus="disablePastDates()"autocomplete="off" />
         <input Type="time"id="time"/>
            <br> <br/>
         Additional Notes:<input Type="text"id="text"/>
@@ -32,7 +32,6 @@
         <input Type="checkbox"id="checkbox"value='Bank Transfer'name='Bank Transfer'>Bank Transfer</input>
         <br> <br/>
         <button value="submit">Submit</button>
-       
     </form>
     <script>  
     var ProductObject={
@@ -54,14 +53,15 @@
     }
    }
    }
-   const today = new Date(); 
-         
-        // Format the date to YYYY-MM-DD 
-        const formattedDate = today.toISOString().split('T')[0]; 
- 
-        // Set the value of the date input to the current date 
-        document.getElementById('datetime').value =formattedDate;
-   
-  </script>
+   function disablePastDates() {
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0');
+  var yyyy = today.getFullYear();
+
+  today = yyyy + '-' + mm + '-' + dd;
+  document.getElementById("date").setAttribute("min", today);
+}
+</script>
 </body>
 </html>
