@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="">
+        <h1>PRODUCT ORDER</h1>
+        Name:<input Type="text"name="name"placeholder="Enter your name"required="required"/>
+        <br> <br/>
+        Email:<input Type="text"name="email"placeholder="abcx123@gmail.com"required="required"/>
+          <br> <br/>
+        Select Product:<select id="Select">
+            <option value="">Select Product </option>
+        </select>
+          <br> <br/>
+        Product list:<select id="select2" name="select2">
+            <option value="">Please select product category</option>
+        </select>
+          <br> <br/>
+        Quantity of the product:<input Type="number"id="number"/>
+          <br> <br/>
+        Preferred Delivery Date and Time:<input Type=""min="getDate()"id="datetime" />
+        <input Type="time"id="time"/>
+           <br> <br/>
+        Additional Notes:<input Type="text"id="text"/>
+           <br> <br/>
+        Payment Type:<input Type="checkbox"id="checkbox"value='Credit card'name='Credit card'>Credit Card</input>
+        <input Type="checkbox"id="checkbox"value='PayPal'name="PayPal">PayPal</input>
+        <input Type="checkbox"id="checkbox"value='Bank Transfer'name='Bank Transfer'>Bank Transfer</input>
+        <br> <br/>
+        <button value="submit">Submit</button>
+       
+    </form>
+    <script>  
+    var ProductObject={
+        "Electronics":["Laptops","Mobiles","Tablets"],
+        "Books":["History","Comedy","Generic"], 
+        "Clothing":["Western","Tradition","Folk"],  
+        }
+    window.onload=function(){
+        var productSel=document.getElementById("Select");
+        var productList=document.getElementById("select2");
+        for (var x in ProductObject){
+            productSel.options[productSel.options.length]= new Option(x);
+        } 
+        productSel.onchange = function() {
+            productList.length=1;
+            var z = ProductObject[productSel.value];
+           for (var i=0;i<z.length;i++) {
+            productList.options[productList.options.length] = new Option(z[i]);
+    }
+   }
+   }
+   const today = new Date(); 
+         
+        // Format the date to YYYY-MM-DD 
+        const formattedDate = today.toISOString().split('T')[0]; 
+ 
+        // Set the value of the date input to the current date 
+        document.getElementById('datetime').value =formattedDate;
+   
+  </script>
+</body>
+</html>
