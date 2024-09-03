@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,70 +59,3 @@
     
 </body>
 </html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form method=" ">
-        <h1>FEEDBACK FORM</h1>
-        Name:<input Type="text"name="name"placeholder="Enter your name"required="required"/>
-         <br> <br/>
-        Email:<input Type="text"name="Email"placeholder='abcz123@gmail.com'required="required"/>
-         <br> <br/>
-        Comments:<input Type="text"name="comment"placeholder="Enter your feedback here"required="required"/>
-         <br> <br/>
-        Rating:<input Type="range"id="rating" min="0" max="10" step="1"/>
-         <br> <br/>
-        <p>Value: <output id="value"></output></p>
-        
-        Feedback Type:<input Type="radio"value='compliment'name='Feedback'required="required">Compliment</input>
-        <input Type="radio"value='complaint'name='Feedback'>Complaint</input>
-        <input Type="radio"value='suggestion'name='Feedback'>Suggestion</input>
-         <br> <br/>
-        Policy Agreement:<input Type="checkbox"value='Policy'name='Policies'>Policies</input>
-         <br> <br/>
-        <div id="navigation">
-        <a href=""><b>feedback policy</b></a>
-       </div>
-       <br> <br/>
-    <button value="submit">Submit</button>
-       <br> <br/>
-    <div id="feedback policy">
-        <h4>Feedback Policy</h4>
-        <p>These are feedback policy</p>
-        <ol type="numeric">
-            <li>The rating is one of the required field</li>
-            <li>Give the rating based on your satisfaction</li>
-            
-
-        </ol>
-            
-    </div>
-
-        
-        
-    </form>
-    <script>    
-        const value = document.querySelector("#value");
-        const input = document.querySelector("#rating");
-        value.textContent = input.value;
-        input.addEventListener("input", (event) => {
-        value.textContent = event.target.value;
-    });
-</script>
-
-
-
-    
-</body>
-</html>
->>>>>>> abf393ea0780f554d080da06b1580eebf290df8d:wqa
-:wqa
-:q
-:a
-
